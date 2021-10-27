@@ -30,3 +30,8 @@ mat-tab-group {
   margin-bottom: 0px;
   min-height: 70px;
 }
+
+.mat-chip-date {
+  background-color: #90CAF9 !important;
+  color: black !important;
+}
