@@ -9,7 +9,7 @@ class Live {
     liveLink: string;
     registrationDate: string;
     urlSafe: SafeResourceUrl;
-
+    
     constructor(id?: string, liveName?: string, channelName?: string, liveDate?: string,
       liveTime?: string, liveLink?: string, registrationDate?: string, urlSafe?: SafeResourceUrl) {
 
