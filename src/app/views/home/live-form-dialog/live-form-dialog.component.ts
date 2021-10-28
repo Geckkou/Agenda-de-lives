@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { LiveService } from 'src/app/shared/service/live.service';
 
 @Component({
   selector: 'app-live-form-dialog',
@@ -13,6 +14,7 @@ export class LiveFormDialogComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private rest: LiveService,
     public dialogRef: MatDialogRef<LiveFormDialogComponent>
   ) { }
 
@@ -26,8 +28,15 @@ export class LiveFormDialogComponent implements OnInit {
     });
   }
 
+  createLive() {
+    this.rest.postLives(this.liveForm.value).subscribe(result => {});
+    this.dialogRef.close();
+    this.liveForm.reset();
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
+    this.liveForm.reset();
   }
 
 }
